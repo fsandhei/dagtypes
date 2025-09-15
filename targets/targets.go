@@ -73,17 +73,17 @@ func ToStringArray(targets []Target) []string {
 // Converts an []string to []Target and panics if one isn't recognised
 //
 // We panic so that we don't have to return an error so that the function can be used inline more easily
-func FromStringArray(names []string) []Target {
+func FromStringArray(names []string) ([]Target, error) {
 	targets := make([]Target, 0, len(names))
 
 	for _, name := range names {
 		target, err := New(name)
 		if err != nil {
-			panic(err)
+			return nil, err
 		}
 
 		targets = append(targets, target)
 	}
 
-	return targets
+	return targets, nil
 }
