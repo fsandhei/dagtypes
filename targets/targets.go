@@ -43,7 +43,7 @@ func New(name string) (Target, error) {
 	return target, nil
 }
 
-// Returns the list of default targets that we want to build for
+// Defaults returns the list of default targets that we want to build for
 func Defaults() []Target {
 	return []Target{
 		X8664PcWindowsMsvc,
@@ -54,12 +54,12 @@ func Defaults() []Target {
 	}
 }
 
-// Returns the string form of the target
+// String returns the string form of the target
 func (t Target) String() string {
 	return targetString[t]
 }
 
-// Converts an []Target to []string
+// ToStringArray converts an []Target to []string
 func ToStringArray(targets []Target) []string {
 	strings := make([]string, 0, len(targets))
 
@@ -70,9 +70,7 @@ func ToStringArray(targets []Target) []string {
 	return strings
 }
 
-// Converts an []string to []Target and panics if one isn't recognised
-//
-// We panic so that we don't have to return an error so that the function can be used inline more easily
+// FromStringArray converts an []string to []Target. An error is returned if a target is not recognized
 func FromStringArray(names []string) ([]Target, error) {
 	targets := make([]Target, 0, len(names))
 
