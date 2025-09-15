@@ -7,3 +7,4 @@ with the Go SDK.
 
 * [classifications](./classifications/classifications.go): Abstraction of Nordic Semiconductor information
   classification levels.
+* [targets](./targets/targets.go): Abstraction of the Rust targets currently supported by Nordic Semiconductor.
