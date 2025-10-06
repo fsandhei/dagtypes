@@ -14,6 +14,7 @@ const (
 	Aarch64UnknownLinuxGnu
 	X8664AppleDarwin
 	Aarch64AppleDarwin
+	UniversalAppleDarwin
 )
 
 var targetString = map[Target]string{
@@ -23,6 +24,7 @@ var targetString = map[Target]string{
 	Aarch64UnknownLinuxGnu: "aarch64-unknown-linux-gnu",
 	X8664AppleDarwin:       "x86_64-apple-darwin",
 	Aarch64AppleDarwin:     "aarch64-apple-darwin",
+	UniversalAppleDarwin:   "universal-apple-darwin",
 }
 
 var stringTarget = map[string]Target{
@@ -32,9 +34,10 @@ var stringTarget = map[string]Target{
 	"aarch64-unknown-linux-gnu": Aarch64UnknownLinuxGnu,
 	"x86_64-apple-darwin":       X8664AppleDarwin,
 	"aarch64-apple-darwin":      Aarch64AppleDarwin,
+	"universal-apple-darwin":    UniversalAppleDarwin,
 }
 
-// Creates a new Target and returns an error if the name isn't known
+// New creates a new Target and returns an error if the name isn't known
 func New(name string) (Target, error) {
 	target, ok := stringTarget[name]
 	if !ok {
