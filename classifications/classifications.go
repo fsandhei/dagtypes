@@ -82,3 +82,9 @@ func FromStringArray(names []string) []Classification {
 
 	return classifications
 }
+
+func (c *Classification) UnmarshalText(text []byte) error {
+	classification, err := New(string(text))
+	c = classification
+	return err
+}
