@@ -2,6 +2,7 @@
 package targets
 
 import (
+	"encoding/json"
 	"fmt"
 )
 
@@ -90,4 +91,29 @@ func (t *Target) UnmarshalText(text []byte) error {
 	target, err := New(string(text))
 	*t = target
 	return err
+}
+
+// MarshalJSON implements the json.Marshaler interface
+func (t Target) MarshalJSON() ([]byte, error) {
+	str, ok := targetString[t]
+	if !ok {
+		return nil, fmt.Errorf("invalid target value: %d", t)
+	}
+	return json.Marshal(str)
+}
+
+// UnmarshalJSON implements the json.Unmarshaler interface
+func (t *Target) UnmarshalJSON(data []byte) error {
+	var str string
+	if err := json.Unmarshal(data, &str); err != nil {
+		return fmt.Errorf("target must be a string: %w", err)
+	}
+
+	target, ok := stringTarget[str]
+	if !ok {
+		return fmt.Errorf("unknown or unsupported target: %s", str)
+	}
+
+	*t = target
+	return nil
 }
