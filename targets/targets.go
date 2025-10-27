@@ -85,3 +85,9 @@ func FromStringArray(names []string) ([]Target, error) {
 
 	return targets, nil
 }
+
+func (t *Target) UnmarshalText(text []byte) error {
+	target, err := New(string(text))
+	*t = target
+	return err
+}
