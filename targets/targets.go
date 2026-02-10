@@ -8,7 +8,7 @@ import (
 type Target int
 
 const (
-	X8664PcWindowsMsvc = iota
+	X8664PcWindowsMsvc Target = iota
 	Aarch64PcWindowsMsvc
 	X8664UnknownLinuxGnu
 	Aarch64UnknownLinuxGnu
