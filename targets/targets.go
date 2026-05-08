@@ -19,22 +19,22 @@ const (
 )
 
 var targetString = map[Target]string{
-	X8664PcWindowsMsvc:     "x86_64-pc-windows-msvc",
-	Aarch64PcWindowsMsvc:   "aarch64-pc-windows-msvc",
-	X8664UnknownLinuxGnu:   "x86_64-unknown-linux-gnu",
-	Aarch64UnknownLinuxGnu: "aarch64-unknown-linux-gnu",
-	X8664AppleDarwin:       "x86_64-apple-darwin",
-	Aarch64AppleDarwin:     "aarch64-apple-darwin",
-	X8664UnknownLinuxMusl:  "x86_64-unknown-linux-musl",
+	X8664PcWindowsMsvc:      "x86_64-pc-windows-msvc",
+	Aarch64PcWindowsMsvc:    "aarch64-pc-windows-msvc",
+	X8664UnknownLinuxGnu:    "x86_64-unknown-linux-gnu",
+	Aarch64UnknownLinuxGnu:  "aarch64-unknown-linux-gnu",
+	X8664AppleDarwin:        "x86_64-apple-darwin",
+	Aarch64AppleDarwin:      "aarch64-apple-darwin",
+	X8664UnknownLinuxMusl:   "x86_64-unknown-linux-musl",
 	Aarch64UnknownLinuxMusl: "aarch64-unknown-linux-musl",
 }
 
 var stringTarget = map[string]Target{
-	"x86_64-pc-windows-msvc":    X8664PcWindowsMsvc,
-	"aarch64-pc-windows-msvc":   Aarch64PcWindowsMsvc,
-	"x86_64-unknown-linux-gnu":  X8664UnknownLinuxGnu,
-	"aarch64-unknown-linux-gnu": Aarch64UnknownLinuxGnu,
-	"x86_64-apple-darwin":       X8664AppleDarwin,
+	"x86_64-pc-windows-msvc":     X8664PcWindowsMsvc,
+	"aarch64-pc-windows-msvc":    Aarch64PcWindowsMsvc,
+	"x86_64-unknown-linux-gnu":   X8664UnknownLinuxGnu,
+	"aarch64-unknown-linux-gnu":  Aarch64UnknownLinuxGnu,
+	"x86_64-apple-darwin":        X8664AppleDarwin,
 	"aarch64-apple-darwin":       Aarch64AppleDarwin,
 	"x86_64-unknown-linux-musl":  X8664UnknownLinuxMusl,
 	"aarch64-unknown-linux-musl": Aarch64UnknownLinuxMusl,
