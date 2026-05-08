@@ -14,6 +14,8 @@ const (
 	Aarch64UnknownLinuxGnu
 	X8664AppleDarwin
 	Aarch64AppleDarwin
+	X8664UnknownLinuxMusl
+	Aarch64UnknownLinuxMusl
 )
 
 var targetString = map[Target]string{
@@ -23,6 +25,8 @@ var targetString = map[Target]string{
 	Aarch64UnknownLinuxGnu: "aarch64-unknown-linux-gnu",
 	X8664AppleDarwin:       "x86_64-apple-darwin",
 	Aarch64AppleDarwin:     "aarch64-apple-darwin",
+	X8664UnknownLinuxMusl:  "x86_64-unknown-linux-musl",
+	Aarch64UnknownLinuxMusl: "aarch64-unknown-linux-musl",
 }
 
 var stringTarget = map[string]Target{
@@ -31,7 +35,9 @@ var stringTarget = map[string]Target{
 	"x86_64-unknown-linux-gnu":  X8664UnknownLinuxGnu,
 	"aarch64-unknown-linux-gnu": Aarch64UnknownLinuxGnu,
 	"x86_64-apple-darwin":       X8664AppleDarwin,
-	"aarch64-apple-darwin":      Aarch64AppleDarwin,
+	"aarch64-apple-darwin":       Aarch64AppleDarwin,
+	"x86_64-unknown-linux-musl":  X8664UnknownLinuxMusl,
+	"aarch64-unknown-linux-musl": Aarch64UnknownLinuxMusl,
 }
 
 // Creates a new Target and returns an error if the name isn't known
